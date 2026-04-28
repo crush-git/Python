@@ -232,5 +232,180 @@ else:
 
 
 
+## 6、 Python 3.10+ 的新写法：match / case ##
+
+各位童鞋，如果你用的是 Python 3.10 或者更新的版本，那么除了 `if / elif / else` 之外，还多了一个更直观的家伙—— `match / case`，叫做「结构化模式匹配」（structural pattern matching）。
+
+为什么要专门讲它啊？
+
+我们先看一个需求，假设两点水想根据后台返回的「指令字符串」来做不同的事情：
+
+```python
+command = 'start'
+
+if command == 'start':
+    print('启动')
+elif command == 'stop':
+    print('停止')
+elif command == 'pause':
+    print('暂停')
+else:
+    print('未知指令')
+```
+
+输出的结果：
+
+```
+启动
+```
+
+这样写没毛病，但是当分支多起来的时候，一长串 `elif` 就显得啰嗦了。我们用 `match / case` 重写一下：
+
+```python
+command = 'start'
+
+match command:
+    case 'start':
+        print('启动')
+    case 'stop':
+        print('停止')
+    case 'pause':
+        print('暂停')
+    case _:
+        print('未知指令')
+```
+
+输出的结果：
+
+```
+启动
+```
+
+这里的 `case _` 就是兜底分支，相当于 `else`，下划线 `_` 是个通配符，匹配任何还没被前面 case 命中的情况。
+
+看到这里，善于思考的你可能会问：那这跟 `switch / case` 不就一样吗？换个语法糖而已嘛。
+
+并不是的， `match / case` 真正的厉害之处，是它能匹配「结构」，不仅仅是「值」。
+
+来看一个序列匹配的例子，假设产品反馈过来一个坐标数据：
+
+```python
+point = [10, 20]
+
+match point:
+    case [0, 0]:
+        print('原点')
+    case [x, 0]:
+        print(f'在 x 轴上，x = {x}')
+    case [0, y]:
+        print(f'在 y 轴上，y = {y}')
+    case [x, y]:
+        print(f'普通点，x = {x}，y = {y}')
+    case _:
+        print('不是二维坐标')
+```
+
+输出的结果：
+
+```
+普通点，x = 10，y = 20
+```
+
+是不是发现，这里不光匹配到了「这是一个长度为 2 的列表」，还顺手把 `x` 、 `y` 给「解包」出来了，下面分支里直接就能用。
+
+序列里还可以用 `*rest` 来收集剩下的元素：
+
+```python
+nums = [1, 2, 3, 4, 5]
+
+match nums:
+    case [first, *rest]:
+        print(f'第一个：{first}，剩下的：{rest}')
+```
+
+输出的结果：
+
+```
+第一个：1，剩下的：[2, 3, 4, 5]
+```
+
+那么字典呢？
+
+`match / case` 也能匹配字典的「形状」：
+
+```python
+response = {'status': 'ok', 'data': [1, 2, 3]}
+
+match response:
+    case {'status': 'ok', 'data': data}:
+        print(f'成功，拿到数据 {data}')
+    case {'status': 'error', 'message': msg}:
+        print(f'失败：{msg}')
+    case _:
+        print('未知响应')
+```
+
+输出的结果：
+
+```
+成功，拿到数据 [1, 2, 3]
+```
+
+更有意思的是，`match / case` 还能跟「类」一起用，配合 `dataclass` 食用，效果更佳：
+
+```python
+from dataclasses import dataclass
+
+
+@dataclass
+class Point:
+    x: int
+    y: int
+
+
+p = Point(0, 5)
+
+match p:
+    case Point(x=0, y=0):
+        print('原点')
+    case Point(x=0, y=y):
+        print(f'在 y 轴上，y = {y}')
+    case Point(x=x, y=0):
+        print(f'在 x 轴上，x = {x}')
+    case Point(x=x, y=y):
+        print(f'普通点 ({x}, {y})')
+```
+
+输出的结果：
+
+```
+在 y 轴上，y = 5
+```
+
+最后，再介绍一个小特性，叫「守卫条件」（guard），就是在 `case` 后面加一个 `if`：
+
+```python
+score = 75
+
+match score:
+    case x if x >= 90:
+        print('优秀')
+    case x if x >= 80:
+        print('良好')
+    case x if x >= 60:
+        print('及格')
+    case _:
+        print('不及格')
+```
+
+输出的结果：
+
+```
+及格
+```
+
+是不是发现，有了 `match / case` 之后，代码更结构化也更好读了？
+
+这里也啰嗦一句，`match / case` 不是用来取代 `if / elif` 的。简单的「值比较」、「真假判断」，老老实实写 `if` 反而更清楚；只有当你要根据「数据的结构」来分发逻辑的时候，比如解析 JSON、处理 AST、写解释器之类的场景，`match / case` 才能真正发挥威力。
 
 

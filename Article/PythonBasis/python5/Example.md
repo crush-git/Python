@@ -8,8 +8,8 @@
 # 打印九九乘法表
 for i in range(1, 10):
         for j in range(1, i+1):
-            # 打印语句中，大括号及其里面的字符 (称作格式化字段) 将会被 .format() 中的参数替换,注意有个点的
-            print('{}x{}={}\t'.format(i, j, i*j), end='')  
+            # 使用 f-string 直接在字符串前加 f，大括号里写表达式即可被求值并插入到字符串中
+            print(f'{i}x{j}={i*j}\t', end='')
         print()
 ```
 
@@ -36,9 +36,9 @@ for i in range(1, 10):
 
 year = int(input("请输入一个年份: "))
 if (year % 4) == 0 and (year % 100) != 0 or (year % 400) == 0:
-    print('{0} 是闰年' .format(year))
+    print(f'{year} 是闰年')
 else:
-     print('{0} 不是闰年' .format(year))
+     print(f'{year} 不是闰年')
 
 ```
 
