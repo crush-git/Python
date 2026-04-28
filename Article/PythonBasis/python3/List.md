@@ -10,7 +10,13 @@ List （列表）是 Python 内置的一种数据类型。 它是一种有序的
 
 现在有一个团队要出去玩，要先报名。如果用我们之前学过的知识，那么就是用一个字符串变量把他们都记录起来。
 
-![](http://twowaterimage.oss-cn-beijing.aliyuncs.com/2019-08-31-080527.png)
+```python
+name1 = '一点水'
+name2 = '两点水'
+name3 = '三点水'
+name4 = '四点水'
+name5 = '五点水'
+```
 
 但是这样太麻烦了，而且也不美观。
 
@@ -18,7 +24,9 @@ List （列表）是 Python 内置的一种数据类型。 它是一种有序的
 
 这时候就可以使用列表了。
 
-![](http://twowaterimage.oss-cn-beijing.aliyuncs.com/2019-08-31-080835.png)
+```python
+name = ['一点水', '两点水', '三点水', '四点水', '五点水']
+```
 
 就这样，一行代码就可以存放 N 多个名字了。
 
@@ -27,7 +35,12 @@ List （列表）是 Python 内置的一种数据类型。 它是一种有序的
 
 从上面的例子可以分析出，列表的格式是这样的。
 
-![](http://twowaterimage.oss-cn-beijing.aliyuncs.com/2019-08-31-081342.png)
+```
+name = ['一点水', '两点水', '三点水', '四点水', '五点水']
+ ↑   ↑ ↑                                              ↑
+列表名 │ 中括号                                        │
+       赋值符号                                  逗号分隔
+```
 
 其实列表就是用中括号 `[]` 括起来的数据，里面的每一个数据就叫做元素。每个元素之间使用逗号分隔。
 
@@ -43,11 +56,17 @@ list1=['两点水','twowter','liangdianshui',123]
 
 我们尝试把他打印出来，看看打印的结果是怎样的。
 
-![](http://twowaterimage.oss-cn-beijing.aliyuncs.com/2019-08-31-081912.png)
+```python
+list1 = ['两点水', 'twowter', 'liangdianshui', 123]
+
+print(list1)
+```
 
 结果如下：
 
-![](http://twowaterimage.oss-cn-beijing.aliyuncs.com/2019-08-31-081951.png)
+```
+['两点水', 'twowter', 'liangdianshui', 123]
+```
 
 
 ## 3、如何访问 List（列表）中的值 ##
@@ -73,7 +92,10 @@ print(name[0:2])
 
 输出的结果：
 
-![](http://twowaterimage.oss-cn-beijing.aliyuncs.com/2019-08-31-090321.png)
+```
+三点水
+['一点水', '两点水']
+```
 
 可见，我们需要知道知道 `name` 这个列表中第三个报名的是谁？只需要用 `name[2]`  就可以了。
 
@@ -101,11 +123,25 @@ print(name[0:2])
 
 所以你可以尝试下下面的各种方式：
 
-![](http://twowaterimage.oss-cn-beijing.aliyuncs.com/2019-08-31-091524.png)
+```python
+name = ['一点水', '两点水', '三点水', '四点水', '五点水']
+
+print(name[0:2])
+print(name[:2])
+print(name[:])
+print(name[1:2])
+print(name[0:3])
+```
 
 看看输出的结果：
 
-![](http://twowaterimage.oss-cn-beijing.aliyuncs.com/2019-08-31-091624.png)
+```
+['一点水', '两点水']
+['一点水', '两点水']
+['一点水', '两点水', '三点水', '四点水', '五点水']
+['两点水']
+['一点水', '两点水', '三点水']
+```
 
 根据输出的结果和上面讲到的知识，就很容易理解其中的一些用法了。
 
