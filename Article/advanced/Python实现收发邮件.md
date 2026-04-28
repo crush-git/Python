@@ -18,7 +18,20 @@
 
 首先我们可以直接 Google 「Python 收发邮件」，就可以得到这么一个结果。
 
-![](http://twowaterimage.oss-cn-beijing.aliyuncs.com/2019-10-15-065554.png)
+```
+Google「python 收发邮件」搜索结果（约 156,000 条）：
+
+  • Python SMTP 发送邮件 | 菜鸟教程
+    www.runoob.com › python › python-email
+  • 使用 python 的 email、smtplib、poplib 模块收发邮件
+    blog.csdn.net
+  • 简单三步，用 Python 发邮件 - 知乎
+    zhuanlan.zhihu.com
+  • Python 发送邮件（最全）- 简书
+    www.jianshu.com
+  • Python 使用 POP3 和 SMTP 协议收发邮件 - 掘金
+    juejin.im
+```
 
 这种常用的需求，基本只要看前几个就能知道大概的思路了。
 
@@ -27,7 +40,22 @@
 
 至于这些模块怎么用，直接看 [Python 官方文档](https://docs.python.org/3.7/library/smtplib.html?highlight=smtplib)
 
-![](http://twowaterimage.oss-cn-beijing.aliyuncs.com/2019-10-15-065957.png)
+```
+Python 3.7.5rc1 Documentation » The Python Standard Library » Internet Protocols and Support »
+
+smtplib — SMTP protocol client
+Source code: Lib/smtplib.py
+
+The smtplib module defines an SMTP client session object that can be used
+to send mail to any Internet machine with an SMTP or ESMTP listener daemon.
+For details of SMTP and ESMTP operation, consult RFC 821 (Simple Mail
+Transfer Protocol) and RFC 1869 (SMTP Service Extensions).
+
+class smtplib.SMTP(host='', port=0, local_hostname=None, [timeout, ]source_address=None)
+
+For normal use, you should only require the initialization/connect,
+sendmail(), and SMTP.quit() methods.
+```
 
 真的，没有任何教程比官方文档资料还全。
 
@@ -47,9 +75,9 @@ Python 发送邮件主要步骤如下：
      - host 是指定连接的邮箱服务器，你可以指定服务器的域名。
      - port 服务器的端口号
      - 这些怎么找到，好比 qq 邮箱，在「设置」那里就有相关的开关和说明。
-     - ![](http://twowaterimage.oss-cn-beijing.aliyuncs.com/2019-10-15-090427.png)
+     - 在 QQ 邮箱「设置 → 账户」页可以看到 `POP3/IMAP/SMTP/Exchange/CardDAV/CalDAV 服务` 区，里面列出了 POP3/SMTP 服务、IMAP/SMTP 服务、Exchange 服务、CardDAV/CalDAV 服务的开关，注明「(POP3/IMAP/SMTP/CardDAV/CalDAV 服务均支持 SSL 连接。如何设置？)」。
      - 点相关的说明，你就能看到对应的服务器地址和端口号了
-     - ![](http://twowaterimage.oss-cn-beijing.aliyuncs.com/2019-10-15-090619.png)
+     - 通用配置：接收邮件服务器 `imap.qq.com`，发送邮件服务器 `smtp.qq.com`。开启 SSL 加密时，IMAP 端口 `993`，SMTP 端口 `465` 或 `587`。
 *  `server.login(username, password)`
     - 登录的账号密码 
 * `server.sendmail(from_addr, to_addr, msg)`

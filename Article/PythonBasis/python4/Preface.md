@@ -4,12 +4,32 @@
 
 >注：(2019年09月01日15:28:00) 在修改文章的时候，发现自己两年前写的像屎一样, 忍不住还在群里吐槽一番。
 
-![](http://twowaterimage.oss-cn-beijing.aliyuncs.com/2019-09-01-072923.png)
+> 群友：@两点水 水哥是在写 Python 教程吗
+>
+> 两点水：在修改
+>
+> 两点水：两年前写完了基础教程的
+>
+> 两点水：最近在全部修改一边
+>
+> 两点水：发现之前写的就是 屎
 
 
 # 目录 #
 
 
-![](http://twowaterimage.oss-cn-beijing.aliyuncs.com/2019-09-01-Dict%20%E5%92%8C%20Set.png)
+- 一、字典（Dictionary）
+    1. 什么是 dict（字典）
+    2. dict（字典）的创建
+    3. 访问 dict（字典）
+    4. 修改 dict（字典）
+    5. 删除 dict（字典）
+    6. dict（字典）使用时注意的事项
+    7. dict（字典）的函数和方法
+- 二、set
+    1. set 的创建
+    2. set 添加元素
+    3. set 添加元素
+    4. set 的运用
 
 

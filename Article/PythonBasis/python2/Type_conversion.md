@@ -24,21 +24,37 @@ Python 中基本数据类型转换的方法有下面几个。
 
 比如 `int()` 函数，将符合规则的字符串类型转化为整数 。
 
-![](http://twowaterimage.oss-cn-beijing.aliyuncs.com/2019-08-30-091547.png)
+```python
+str1 = '100'
+str2 = '300'
+
+print(str1 + str2)
+print(int(str1) + int(str2))
+```
 
 输出结果：
 
-![](http://twowaterimage.oss-cn-beijing.aliyuncs.com/2019-08-30-091648.png)
+```
+100300
+400
+```
 
 注意这里是符合规则的字符串类型，如果是文字形式等字符串是不可以被 `int()` 函数强制转换的。
 
 还有小数形式的字符串也是不能用  `int()`  函数转换的。
 
-![](http://twowaterimage.oss-cn-beijing.aliyuncs.com/2019-08-31-064739.png)
+```python
+print(int('88.88'))
+```
 
 这样转换会报错。
 
-![](http://twowaterimage.oss-cn-beijing.aliyuncs.com/2019-08-31-064811.png)
+```
+Traceback (most recent call last):
+  File "test.py", line 2, in <module>
+    print(int('88.88'))
+ValueError: invalid literal for int() with base 10: '88.88'
+```
 
 但这并不是意味着浮点数不能转化为整数，而是小数形式的字符串不能强转为字符串。
 
@@ -46,11 +62,15 @@ Python 中基本数据类型转换的方法有下面几个。
 
 比如：
 
-![](http://twowaterimage.oss-cn-beijing.aliyuncs.com/2019-08-31-065336.png)
+```python
+print(int(88.88))
+```
 
 输出结果：
 
-![](http://twowaterimage.oss-cn-beijing.aliyuncs.com/2019-08-31-065407.png)
+```
+88
+```
 
 但是你会发现，结果是 88 ，后面小数点的 0.88 被去掉了。
 
