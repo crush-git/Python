@@ -49,7 +49,29 @@ tuple4=(123,)
 
 具体看下图 tuple4 和 tuple5 的输出值
 
-![](http://twowaterimage.oss-cn-beijing.aliyuncs.com/2019-08-31-093847.jpg)
+```python
+#-*-coding:utf-8-*-
+tuple1 = ('两点水', 'twowter', 'liangdianshui', 123, 456)
+tuple2 = '两点水', 'twowter', 'liangdianshui', 123, 456
+tuple3 = ()
+tuple4 = (123,)
+tuple5 = (123)
+print(tuple1)
+print(tuple2)
+print(tuple3)
+print(tuple4)
+print(tuple5)
+```
+
+输出的结果：
+
+```
+('两点水', 'twowter', 'liangdianshui', 123, 456)
+('两点水', 'twowter', 'liangdianshui', 123, 456)
+()
+(123,)
+123
+```
 
 
 
@@ -73,7 +95,10 @@ print(tuple2[0])
 
 输出的结果：
 
-![访问 tuple](http://upload-images.jianshu.io/upload_images/2136918-edfb7c9ebc7d5ab0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+```
+twowter
+两点水
+```
 
 
 
@@ -109,7 +134,17 @@ print(tuple1)
 可以看到，两次输出的 tuple 值是变了的。我们看看 tuple1 的存储是怎样的。
 
 
-![](http://twowaterimage.oss-cn-beijing.aliyuncs.com/2019-08-31-%E4%BF%AE%E6%94%B9tuple%E6%B5%81%E7%A8%8B%E5%9B%BE.png)
+tuple1：
+
+|   0    |    1     |       2         |  3   |
+|--------|----------|-----------------|------|
+| '两点水' | 'twowter' | 'liangdianshui' | List |
+
+其中第 3 个元素 `List` 指向另一块内存：
+
+|   0  |   1  |
+|------|------|
+|  123 |  456 |
 
 
 可以看到，tuple1 有四个元素，最后一个元素是一个 List ，List 列表里有两个元素。
@@ -185,7 +220,15 @@ print(tuple(list1))
 
 输出的结果如下：
 
-![](http://twowaterimage.oss-cn-beijing.aliyuncs.com/2019-08-31-101523.png)
+```
+5
+('一点水', '两点水', '三点水', '四点水', '五点水', '1点水', '2点水', '3点水', '4点水', '5点水')
+('一点水', '两点水', '三点水', '四点水', '五点水', '一点水', '两点水', '三点水', '四点水', '五点水')
+True
+5点水
+1点水
+(1, 2, 3, 4, 5)
+```
 
 
 
