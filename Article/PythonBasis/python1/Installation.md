@@ -10,7 +10,12 @@
 
 这里要注意了，记得把「Add Python 3.6 to Path」勾上，勾上之后就不需要自己配置环境变量了，如果没勾上，就要自己手动配置。
 
-![Python安装.png](http://upload-images.jianshu.io/upload_images/2136918-2bf6591f0a12e80b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+在 「Install Python 3.6.1 (64-bit)」 安装向导中，你会看到两个安装选项：
+
+- 「Install Now」：使用默认设置安装，默认路径是 `C:\Users\Administrator\AppData\Local\Programs\Python\Python36`，会自带 IDLE 、pip 和文档，并创建快捷方式和文件关联。
+- 「Customize installation」：自定义安装路径和功能。
+
+无论选哪个，安装界面下方都有两个勾选框，一个是「Install launcher for all users (recommended)」，另一个就是「Add Python 3.6 to PATH」 。**勾上这个就不用自己配置环境变量了**，所以这一步千万别忘。
 
 如果你一时手快，忘记了勾上 「Add Python 3.6 to Path」，那也不要紧，只需要手动配置一下环境变量就好了。
 
@@ -24,7 +29,12 @@ path=%path%;C:\Python
 
 安装完成后，打开命令提示符窗口，敲入 python 后，出现下面的情况，证明 Python 安装成功了。
 
-![运行python.png](http://upload-images.jianshu.io/upload_images/2136918-817c22f802e8cfce.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+```
+C:\Users\Administrator>python
+Python 3.6.1 (v3.6.1:69c0db5, Mar 21 2017, 18:41:36) [MSC v.1900 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+>>>
+```
 
 而你看到提示符 `>>>` 就表示我们已经在 Python 交互式环境中了，可以输入任何 Python 代码，回车后会立刻得到执行结果。
 
@@ -53,7 +63,14 @@ vi ~/.bash_profile
 export PATH="/Library/Frameworks/Python. Framework/Versions/3.7/bin:$PATH"
 ```
 
-![](http://twowaterimage.oss-cn-beijing.aliyuncs.com/2019-07-22-084149.png)
+写入后 `~/.bash_profile` 文件大致是下面这个样子（以草根本机的配置为例）：
+
+```bash
+# Setting PATH for Python 3.6
+# The original version is saved in .bash_profile.pysave
+PATH="/Library/Frameworks/Python.framework/Versions/3.7/bin:${PATH}"
+export PATH
+```
 
 最后保存退出，激活运行一下文件：
 
