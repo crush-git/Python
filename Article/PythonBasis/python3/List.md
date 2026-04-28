@@ -171,7 +171,10 @@ print(name)
 
 输出的结果：
 
-![](http://twowaterimage.oss-cn-beijing.aliyuncs.com/2019-08-31-092406.png)
+```
+['一点水', '2点水', '三点水', '四点水', '五点水']
+['一点水', '2点水', '三点水', '四点水', '五点水', '六点水']
+```
 
 
 
@@ -197,7 +200,10 @@ print(name)
 
 输出的结果:
 
-![](http://twowaterimage.oss-cn-beijing.aliyuncs.com/2019-08-31-092705.png)
+```
+['一点水', '两点水', '三点水', '四点水', '五点水']
+['一点水', '两点水', '三点水', '五点水']
+```
 
 你看输出的结果，列表中已经没有了 `四点水` 这个数据了。证明已经删除成功了。
 
@@ -299,6 +305,35 @@ print(newUser)
 
 ```
 
-![list的使用](http://upload-images.jianshu.io/upload_images/2136918-65d31cae9f8bb34d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+输出的结果：
+
+```
+1.产品用户
+['liangdianshui', 'twowater', '两点水']
+
+2.统计有多少个用户
+3
+
+3.查看具体的用户
+liangdianshui,twowater,两点水
+
+4.在末尾添加新用户
+['liangdianshui', 'twowater', '两点水', '茵茵']
+
+5.指定位置添加用户
+['VIP用户', 'liangdianshui', 'twowater', '两点水', '茵茵']
+
+6.删除末尾用户
+['VIP用户', 'liangdianshui', 'twowater', '两点水']
+
+7.删除指定位置的list元素
+['VIP用户', 'twowater', '两点水']
+
+8.把某个元素替换成别的元素
+['VIP用户', 'twowater', '三点水']
+
+9.不同元素类型的list数据
+[['VIP用户', 11111], ['twowater', 22222], ['三点水', 33333]]
+```
 
 
