@@ -9,5 +9,11 @@ Python 界的领袖 Tim Peters 说的：
 
 # 目录 #
 
-![](http://twowaterimage.oss-cn-beijing.aliyuncs.com/2019-10-14-%E5%85%83%E7%B1%BB.png)
+这一篇的目录如下：
+
+- 一、Python 中类也是对象
+- 二、使用 type() 动态创建类
+- 三、什么是元类
+- 四、自定义元类
+- 五、使用元类
 
