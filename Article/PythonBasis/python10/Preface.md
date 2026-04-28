@@ -6,6 +6,15 @@
 
 # 目录 #
 
-![](http://twowaterimage.oss-cn-beijing.aliyuncs.com/2019-10-14-Python%20%E7%9A%84%20Magic%20Method.png)
+这一篇的目录如下：
+
+- 一、Python 的 Magic Method
+- 二、构造（`__new__`）和初始化（`__init__`）
+- 三、属性的访问控制
+- 四、对象的描述器
+- 五、自定义容器（Container）
+- 六、运算符相关的魔术方法
+    - 1、比较运算符
+    - 2、算术运算符
 
 
