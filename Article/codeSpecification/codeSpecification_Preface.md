@@ -6,5 +6,28 @@
 
 # 目录 #
 
-![](http://twowaterimage.oss-cn-beijing.aliyuncs.com/2019-07-20-Python%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83.png)
+- [一、简明概述](codeSpecification_first.md)
+    - 1、编码
+    - 2、代码格式
+        - 2.1、缩进
+        - 2.2、行宽
+        - 2.3、引号
+        - 2.4、空行
+        - 2.5、编码
+    - 3、import 语句
+    - 4、空格
+    - 5、换行
+    - 6、docstring
+- [二、注释](codeSpecification_second.md)
+    - 1、注释
+        - 1.1、块注释
+        - 1.2、行注释
+        - 1.3、建议
+    - 2、文档注释（Docstring）
+- [三、命名规范](codeSpecification_third.md)
+    - 1、模块
+    - 2、类名
+    - 3、函数
+    - 4、变量名
+    - 5、常量
 
