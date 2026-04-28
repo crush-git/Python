@@ -18,7 +18,19 @@
 
 循环语句的一般形式如下：
 
-![python循环语句](http://upload-images.jianshu.io/upload_images/2136918-eaaae2fbfec3330f?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+```
+        ●
+        │
+        ↓ ←──────────────┐
+        │                │
+        ↓                │
+     ╱──────╲   true   ┌─────────┐
+     ╲ 条件   ╲ ──────→ │ 循环代码  │ ─┘
+      ╲      ╱         └─────────┘
+       ╲────╱
+        │ false
+        ↓
+```
 
 
 在 Python 提供了 for 循环和 while 循环。
@@ -45,7 +57,24 @@
 它的流程图基本如下：
 
 
-![for循环的流程图](http://upload-images.jianshu.io/upload_images/2136918-a0728c1c488238af?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+```
+        ●
+        │   for iterating_var in sequence:
+        ↓        statement(s)
+        │
+        ↓
+     ╱────────╲   序列中没有更多元素
+     ╲ 序列里的  ╲ ──────────────────→ ○ 结束
+      ╲ 元素    ╱
+       ╲──────╱
+        │ 取下一个元素
+        ↓
+   ┌──────────────┐
+   │ execute      │ ──┐
+   │ statement(s) │   │
+   └──────────────┘   │
+        ↑─────────────┘
+```
 
 
 基本的语法格式：
@@ -81,7 +110,20 @@ o
 
 那如果我们把字符串换为字典 dict 呢？
 
-![](http://twowaterimage.oss-cn-beijing.aliyuncs.com/2019-09-07-094741.png)
+```python
+dict = {'一点水': '小学生', '两点水': '初中生', '三点水': '高中生'}
+
+for i in dict:
+    print(i)
+```
+
+打印结果：
+
+```
+一点水
+两点水
+三点水
+```
 
 你会发现只打印了字典 dict 中的每一个 key 值。
 
@@ -97,7 +139,26 @@ o
 
 比如，你试了之后，会发现整数和浮点数是不可以直接放在 for 循环里面的。
 
-![](http://twowaterimage.oss-cn-beijing.aliyuncs.com/2019-09-07-095313.png)
+```python
+a = 100
+
+b = 0.01
+
+for i in a:
+    print(i)
+
+for i in b:
+    print(i)
+```
+
+运行后会报错：
+
+```
+Traceback (most recent call last):
+  File "/Users/twowater/dev/python/test/com/twowater/test.py", line 5, in <module>
+    for i in a:
+TypeError: 'int' object is not iterable
+```
 
 
 
@@ -151,7 +212,20 @@ for i in range(3):
 
 比如  `range(0,10,2) ` , 它的意思是：从 0 数到 10（不取 10 ），每次间隔为 2 。
 
-![](http://twowaterimage.oss-cn-beijing.aliyuncs.com/2019-09-09-065854.png)
+```python
+for i in range(0, 10, 2):
+    print(i)
+```
+
+打印的结果为：
+
+```
+0
+2
+4
+6
+8
+```
 
 
  
@@ -164,7 +238,16 @@ While 循环和 for 循环的作用是一样的。
 
 我们先来看看 While 循环语句的样子。
 
-![](http://twowaterimage.oss-cn-beijing.aliyuncs.com/2019-09-07-083137.png)
+```python
+count = 1
+sum1 = 0
+
+while count <= 100:    # 条件语句
+    sum1 = sum1 + count    # while 子句
+    count = count + 1
+
+print(sum1)
+```
 
 程序输出的结果是：
 
