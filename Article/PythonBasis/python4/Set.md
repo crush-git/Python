@@ -81,7 +81,11 @@ print(set1)
 
 因为 set 是一个无序不重复元素集，因此，两个 set 可以做数学意义上的 union(并集), intersection(交集), difference(差集) 等操作。
 
-![set集合运算](http://upload-images.jianshu.io/upload_images/2136918-733b1d1071f772bd?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+用文氏图理解一下三种集合运算：
+
+- Union（并集）：两个圆全部填充，代表两个集合所有的元素合并
+- Intersection（交集）：只填充两个圆重叠的中间部分，代表两个集合都有的元素
+- Difference（差集）：只填充第一个圆减去与第二个圆重叠的部分，代表第一个集合中有、第二个集合中没有的元素
 
 例子：
 
