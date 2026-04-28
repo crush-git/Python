@@ -16,31 +16,62 @@
 
 那么我们先来看下这三种方式，来定义同样内容的字符串，再把它打印出来，看看是怎样的。
 
-![](http://twowaterimage.oss-cn-beijing.aliyuncs.com/2019-08-29-071320.png)
+```python
+str1 = '两点水'
+str2 = "两点水"
+str3 = '''两点水'''
+print(str1)
+print(str2)
+print(str3)
+```
 
 打印出来的结果是一样的。
 
-![](http://twowaterimage.oss-cn-beijing.aliyuncs.com/2019-08-29-071403.png)
+```
+两点水
+两点水
+两点水
+```
 
 那如果我们的字符串不是 `两点水`，是 `两'点'水` 这样呢？
 
 这样就直接报错了。
 
-![](http://twowaterimage.oss-cn-beijing.aliyuncs.com/2019-08-29-071800.png)
+```python
+str1 = '两'点'水'
+print(str1)
+```
+
+```
+  File "test.py", line 1
+    str1 = '两'点'水'
+                  ^
+SyntaxError: invalid syntax
+```
 
 但是要注意，用单引号 `' '` 不行，用双引号 `" "` 是可以的。
 
-![](http://twowaterimage.oss-cn-beijing.aliyuncs.com/2019-08-29-072459.png)
+```python
+str2 = "两'点'水"
+print(str2)
+```
 
 打印的结果也跟预想的一样：
 
-![](http://twowaterimage.oss-cn-beijing.aliyuncs.com/2019-08-29-072523.png)
+```
+两'点'水
+```
 
 至于三引号，也是一样的，如果字符串内容里面含有双引号，也是会报同样的错误的。那么这时候你就可以用三引号了。
 
-![](http://twowaterimage.oss-cn-beijing.aliyuncs.com/2019-08-29-072701.png)
+```python
+str3 = '''两点水说："你好！"'''
+print(str3)
+```
 
-![](http://twowaterimage.oss-cn-beijing.aliyuncs.com/2019-08-29-072829.png)
+```
+两点水说："你好！"
+```
 
 那么用单引号，双引号定义的字符串就不能表示这样的内容吗？
 
@@ -52,19 +83,36 @@
 
 了解了之后，直接程序测试一下：
 
-![](http://twowaterimage.oss-cn-beijing.aliyuncs.com/2019-08-29-073544.png)
+```python
+str1 = '两\'点\'水'
+str2 = "两点水说：\"你好！\""
+print(str1)
+print(str2)
+```
 
 运行结果如下：
 
-![](http://twowaterimage.oss-cn-beijing.aliyuncs.com/2019-08-29-073601.png)
+```
+两'点'水
+两点水说："你好！"
+```
 
 最后，也提一下， 三引号 `''' '''` 是直接可以分行的。
 
-![](http://twowaterimage.oss-cn-beijing.aliyuncs.com/2019-08-29-074157.png)
+```python
+str2 = '''两
+点
+水'''
+print(str2)
+```
 
 运行结果：
 
-![](http://twowaterimage.oss-cn-beijing.aliyuncs.com/2019-08-29-074209.png)
+```
+两
+点
+水
+```
 
 
 
