@@ -7,13 +7,27 @@
 1.  指令：print
 2. 指令的执行对象，在 print 后面的括号里的内容
 
-![](http://twowaterimage.oss-cn-beijing.aliyuncs.com/2019-08-17-074454.png)
+结构如下：
+
+```
+print(  动作执行的内容  )
+  ↑           ↑
+ 动作      动作执行的内容
+```
 
 而 `print()` 函数的作用是让计算机把你给它的指令结果，显示在屏幕的终端上。这里的指令就是你在 `print()` 函数里的内容。
 
 比如在上一章节中，我们的第一个 Python 程序，打印 `print('Hello Python')`
 
-![](http://twowaterimage.oss-cn-beijing.aliyuncs.com/2019-08-17-080241.png)
+```python
+print('Hello Python')
+```
+
+输出结果：
+
+```
+Hello Python
+```
 
 它的执行流程如下：
 
@@ -21,13 +35,36 @@
 2. 解析器把代码解释为计算器能读懂的机器语言
 3. 计算机执行完后就打印结果
 
-![](http://twowaterimage.oss-cn-beijing.aliyuncs.com/2019-08-17-083751.png)
+流程示意：
+
+```
+print('Hello Python')  ──向解释器发出指令──▶  Python 解释器
+                                                  │
+                                       解析为机器语言
+                                                  ▼
+                                              计算机
+                                                  │
+                                       执行完打印结果
+                                                  ▼
+                                          Hello Python
+```
 
 可能这里有人会问，为什么要加单引号，直接  `print(Hello Python)` 不行吗？
 
 如果你写代码过程中，有这样的疑问，直接写一下代码，自己验证一下是最好的。
 
-![](http://twowaterimage.oss-cn-beijing.aliyuncs.com/2019-08-17-094034.png)
+```python
+print(Hello Python)
+```
+
+运行结果：
+
+```
+  File "test.py", line 1
+    print(Hello Python)
+                    ^
+SyntaxError: invalid syntax
+```
 
 显然，去掉单引号后，运行结果标红了（报错），证明这是不可以的。
 
