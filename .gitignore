@@ -21,6 +21,7 @@ site/
 
 # 截图归档（Stage 1 用，本地参考，不入库）
 _legacy_images/
+_legacy_images_safe/
 
 # Python 工具产物
 __pycache__/
