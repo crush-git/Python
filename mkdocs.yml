@@ -1,0 +1,160 @@
+site_name: 小白学Python
+site_description: 25k star 中文 Python 入门 + 进阶教程，2026 现代化版
+site_url: https://walter201230.github.io/Python/
+repo_url: https://github.com/walter201230/Python
+repo_name: walter201230/Python
+copyright: Copyright © 2017-2026 两点水
+
+docs_dir: Article
+
+theme:
+  name: material
+  language: zh
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      toggle:
+        icon: material/brightness-7
+        name: 切换到夜间模式
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      toggle:
+        icon: material/brightness-4
+        name: 切换到日间模式
+  features:
+    - content.code.copy
+    - content.code.annotate
+    - navigation.instant
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - toc.follow
+
+plugins:
+  - search:
+      separator: '[\s\-_,:!=\[\]()"`/]+|\.(?!\d)|&[lg]t;|(?!\b)(?=[A-Z][a-z])'
+  - glightbox
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - tables
+  - toc:
+      permalink: true
+
+nav:
+  - 首页: index.md
+  - 为什么学 Python: PythonBasis/python0/WhyStudyPython.md
+  - 代码规范:
+      - 简明概述: codeSpecification/codeSpecification_first.md
+      - 注释: codeSpecification/codeSpecification_second.md
+      - 命名规范: codeSpecification/codeSpecification_third.md
+  - 第一个 Python 程序:
+      - 序: PythonBasis/python1/Preface.md
+      - Python 简介: PythonBasis/python1/Introduction.md
+      - 安装: PythonBasis/python1/Installation.md
+      - 第一个程序: PythonBasis/python1/The_first_procedure.md
+      - PyCharm IDE: PythonBasis/python1/IDE.md
+  - 基本数据类型与变量:
+      - 序: PythonBasis/python2/Preface.md
+      - 语法说明: PythonBasis/python2/Grammar.md
+      - print 函数: PythonBasis/python2/print.md
+      - 基本数据类型: PythonBasis/python2/Type_of_data.md
+      - 字符串编码: PythonBasis/python2/StringCoding.md
+      - 类型转换: PythonBasis/python2/Type_conversion.md
+      - 变量: PythonBasis/python2/Variable.md
+  - List 与 Tuple:
+      - 序: PythonBasis/python3/Preface.md
+      - List 列表: PythonBasis/python3/List.md
+      - Tuple 元组: PythonBasis/python3/tuple.md
+  - Dict 与 Set:
+      - 序: PythonBasis/python4/Preface.md
+      - 字典: PythonBasis/python4/Dict.md
+      - 集合: PythonBasis/python4/Set.md
+  - 条件与循环:
+      - 序: PythonBasis/python5/Preface.md
+      - 条件语句: PythonBasis/python5/If.md
+      - 循环语句: PythonBasis/python5/Cycle.md
+      - 综合实例: PythonBasis/python5/Example.md
+  - 函数:
+      - 序: PythonBasis/python6/Preface.md
+      - 自定义函数: PythonBasis/python6/1.md
+      - 返回值: PythonBasis/python6/2.md
+      - 参数: PythonBasis/python6/3.md
+      - 传值问题: PythonBasis/python6/4.md
+      - 匿名函数: PythonBasis/python6/5.md
+  - 迭代器与生成器:
+      - 序: PythonBasis/python7/Preface.md
+      - 迭代: PythonBasis/python7/1.md
+      - 迭代器: PythonBasis/python7/2.md
+      - 列表生成式: PythonBasis/python7/3.md
+      - 生成器: PythonBasis/python7/4.md
+      - 综合例子: PythonBasis/python7/5.md
+  - 面向对象:
+      - 序: PythonBasis/python8/Preface.md
+      - 概念: PythonBasis/python8/1.md
+      - 类的定义: PythonBasis/python8/2.md
+      - 类方法: PythonBasis/python8/3.md
+      - 修改类属性: PythonBasis/python8/4.md
+      - 类和对象: PythonBasis/python8/5.md
+      - 初始化函数: PythonBasis/python8/6.md
+      - 继承: PythonBasis/python8/7.md
+      - 多态: PythonBasis/python8/8.md
+      - 访问控制: PythonBasis/python8/9.md
+  - 模块与包:
+      - 序: PythonBasis/python9/Preface.md
+      - 模块简介: PythonBasis/python9/1.md
+      - 模块使用: PythonBasis/python9/2.md
+      - 主模块: PythonBasis/python9/3.md
+      - 包: PythonBasis/python9/4.md
+      - 作用域: PythonBasis/python9/5.md
+  - Magic Method:
+      - 序: PythonBasis/python10/Preface.md
+      - 概念: PythonBasis/python10/1.md
+      - 构造与初始化: PythonBasis/python10/2.md
+      - 属性访问控制: PythonBasis/python10/3.md
+      - 描述器: PythonBasis/python10/4.md
+      - 自定义容器: PythonBasis/python10/5.md
+      - 运算符魔术方法: PythonBasis/python10/6.md
+  - 枚举类:
+      - 使用: PythonBasis/python11/1.md
+      - Enum 源码: PythonBasis/python11/2.md
+      - 自定义类型: PythonBasis/python11/3.md
+      - 枚举比较: PythonBasis/python11/4.md
+  - 元类:
+      - 序: PythonBasis/python12/Preface.md
+      - 类是对象: PythonBasis/python12/1.md
+      - 用 type 创建类: PythonBasis/python12/2.md
+      - 什么是元类: PythonBasis/python12/3.md
+      - 自定义元类: PythonBasis/python12/4.md
+      - 使用元类: PythonBasis/python12/5.md
+  - 线程与进程:
+      - 序: PythonBasis/python13/Preface.md
+      - 概念: PythonBasis/python13/1.md
+      - 多线程编程: PythonBasis/python13/2.md
+      - 进程: PythonBasis/python13/3.md
+  - 正则表达式:
+      - 序: PythonBasis/python14/Preface.md
+      - 初识: PythonBasis/python14/1.md
+      - 字符集: PythonBasis/python14/2.md
+      - 数量词: PythonBasis/python14/3.md
+      - 边界匹配符: PythonBasis/python14/4.md
+      - re.sub: PythonBasis/python14/5.md
+      - re.match 与 re.search: PythonBasis/python14/6.md
+  - 闭包: PythonBasis/python15/1.md
+  - 装饰器: PythonBasis/python16/1.md
