@@ -157,3 +157,15 @@ nav:
       - re.match 与 re.search: PythonBasis/python14/6.md
   - 闭包: PythonBasis/python15/1.md
   - 装饰器: PythonBasis/python16/1.md
+  - 类型注解: PythonBasis/python17/1.md
+  - pathlib 路径处理: PythonBasis/python18/1.md
+  - 异常处理与异常组: PythonBasis/python19/1.md
+  - dataclass 与 Pydantic: PythonBasis/python20/1.md
+  - 上下文管理器: PythonBasis/python21/1.md
+  - async/await 与并发: PythonBasis/python22/1.md
+  - 工程基线 pyproject 与 uv: PythonBasis/python23/1.md
+  - 代码风格 ruff: PythonBasis/python24/1.md
+  - 单元测试 pytest: PythonBasis/python25/1.md
+  - 标准日志 logging: PythonBasis/python26/1.md
+  - 打包发布与 typer: PythonBasis/python27/1.md
+  - 学完之后做什么: PythonBasis/python28/1.md
