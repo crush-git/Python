@@ -13,16 +13,30 @@
 然后打开文件，输入 `print('Hello Python')`
 
 
-![](http://twowaterimage.oss-cn-beijing.aliyuncs.com/2019-08-17-075948.jpg)
+```python
+print('Hello Python')
+```
 
 
 最后就可以打开命令行窗口，把当前目录切换到 HelloPython.py 所在目录，就可以运行这个程序了，下面就是运行的结果。
 
 
-![](http://twowaterimage.oss-cn-beijing.aliyuncs.com/2019-08-17-075956.jpg)
+```
+C:\Users\Administrator>cd C:\Users\Administrator\Desktop\Python
+
+C:\Users\Administrator\Desktop\Python>python HelloPython.py
+Hello Python
+
+C:\Users\Administrator\Desktop\Python>
+```
 
 
 当然，如果你是使用  [Sublime Text](http://www.sublimetext.com/) ，并且在安装 Python 的时候配置好了环境变量，直接按 Ctrl + B 就可以运行了，运行结果如下：
 
-![](http://twowaterimage.oss-cn-beijing.aliyuncs.com/2019-08-17-080018.jpg)
+这里要注意，记得在 Sublime Text 右下角的语法选择那里，选择 `Python` ，否则按 Ctrl + B 是没法正确执行的。运行后在编辑器底部的输出窗口就能看到结果：
+
+```
+Hello Python
+[Finished in 0.5s]
+```
 
