@@ -143,3 +143,103 @@ print(set7)
 ```
 
 
+## 5、现代 set 的几个补充 ##
+
+各位童鞋，前面讲的几条 set 用法在 Python 各个版本都能用。这里再补三个现代写法里比较常见的小知识，让你写代码的时候更顺手。
+
+### （1）集合推导式 ###
+
+我们之前学列表的时候，用过列表推导式，比如 `[x * x for x in range(5)]` 。其实 set 也有自己的「集合推导式」，写法几乎一样，只是把外面的方括号换成大括号：
+
+```python
+# 取 1 到 10 中所有偶数的平方
+squares = {x * x for x in range(1, 11) if x % 2 == 0}
+print(squares)
+```
+
+输出的结果：
+
+```
+{64, 4, 36, 100, 16}
+```
+
+是不是发现，最后的结果自动就是「无序、不重复」的，根本不需要再手动调用 `set()` 转一道。
+
+举个更贴近业务的例子，假设两点水想从一堆订单里，提取出「不重复的下单用户」：
+
+```python
+orders = [
+    {'user': '一点水', 'amount': 100},
+    {'user': '两点水', 'amount': 200},
+    {'user': '一点水', 'amount': 50},
+    {'user': '三点水', 'amount': 300},
+]
+
+users = {order['user'] for order in orders}
+print(users)
+```
+
+输出的结果（顺序可能不同）：
+
+```
+{'两点水', '一点水', '三点水'}
+```
+
+一行就搞定，比先建空 set 再 `add` 干净多了。
+
+### （2）frozenset：不可变的 set ###
+
+普通的 set 是可变的，可以 `add` 、 `remove` 。可是某些时候，我们想要一个「不能再改」的集合，比如把它当作 dict 的 key，或者放进另一个 set 里。
+
+这时候就要用 `frozenset` ：
+
+```python
+fs = frozenset([1, 2, 3])
+print(fs)
+
+# 可以做集合运算
+print(fs & frozenset([2, 3, 4]))
+
+# 可以当作 dict 的 key
+config = {frozenset(['admin', 'editor']): '后台权限'}
+print(config[frozenset(['editor', 'admin'])])
+```
+
+输出的结果：
+
+```
+frozenset({1, 2, 3})
+frozenset({2, 3})
+后台权限
+```
+
+注意最后一段，`frozenset(['admin', 'editor'])` 和 `frozenset(['editor', 'admin'])` 是相等的——因为 set 本来就无序——所以两次查找命中的是同一个 key。
+
+### （3）什么时候该用 set 而不是 list ###
+
+最后这点不是新语法，但是很重要。我们做「成员判断」的时候，比如 `x in collection` ：
+
+* 如果 `collection` 是 list ，复杂度是 O(n)，元素越多越慢
+* 如果 `collection` 是 set （或 dict），复杂度接近 O(1) ，跟元素数量基本无关
+
+所以，如果你的代码里有大量「这个东西在不在那一堆里」的判断，把那一堆从 list 转成 set，往往能让性能瞬间起飞：
+
+```python
+# 有 10 万个用户名，要判断某个名字在不在
+names_list = [f'user_{i}' for i in range(100000)]
+names_set = set(names_list)
+
+# 这两种写法结果一样，但是后者快得多
+print('user_99999' in names_list)
+print('user_99999' in names_set)
+```
+
+输出的结果：
+
+```
+True
+True
+```
+
+是不是发现，set 的价值不光是「去重」，更重要的是「快查」。各位以后在写代码的时候，遇到「频繁的 in 判断」，就可以考虑把那个集合换成 set。
+
