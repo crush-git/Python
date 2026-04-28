@@ -10,7 +10,27 @@ Python 程序语言指定任何非 0 和非空（null）值为 True，0 或者 n
 
 执行的流程图如下：
 
-![if语句流程图](http://upload-images.jianshu.io/upload_images/2136918-4ee2486190450a1a?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+```
+        ┌─────────┐
+        │  开始    │
+        └────┬────┘
+             ↓
+         ╱───────╲       条件为 false
+        ╱   条件   ╲ ─────────────────┐
+        ╲         ╱                  │
+         ╲───────╱                   │
+             │ 条件为 true            │
+             ↓                       │
+        ┌─────────┐                  │
+        │ 条件代码 │                  │
+        └────┬────┘                  │
+             ↓                       │
+             ←───────────────────────┘
+             ↓
+        ┌─────────┐
+        │  结束    │
+        └─────────┘
+```
 
 
 ## 2、if 语句的基本形式 ##
@@ -58,19 +78,40 @@ if num :
 
 输出的结果如下：
 
-![](http://twowaterimage.oss-cn-beijing.aliyuncs.com/2019-09-07-072713.png)
+```
+Hello Python
+```
 
 可见，把结果打印出来了。
 
 那如果我们把 `num ` 改为空字符串呢？
 
-![](http://twowaterimage.oss-cn-beijing.aliyuncs.com/2019-09-07-072941.png)
+```python
+num = ''
+if num :
+    print('Hello Python')
+```
+
+输出结果什么也没有打印（程序正常结束，没输出 `Hello Python`）。
 
 很明显，空字符串是为 False 的，不符合条件语句，因此不会执行到  `print('Hello Python')`  这段代码。
 
 还有再啰嗦一点，提醒一下，在条件判断代码中的冒号 `:` 后、下一行内容是一定要缩进的。不缩进是会报错的。
 
-![](http://twowaterimage.oss-cn-beijing.aliyuncs.com/2019-09-07-073432.png)
+```python
+num = ''
+if num :
+print('Hello Python')
+```
+
+运行后会报错：
+
+```
+  File "/Users/twowater/dev/python/test/com/twowater/test.py", line 4
+    print('Hello Python')
+        ^
+IndentationError: expected an indented block
+```
 
 冒号和缩进是一种语法。它会帮助 Python 区分代码之间的层次，理解条件执行的逻辑及先后顺序。
 
@@ -168,7 +209,24 @@ if 嵌套是指什么呢？
 
 比如上面说到的例子，也可以用 if 嵌套来写。
 
-![](http://twowaterimage.oss-cn-beijing.aliyuncs.com/2019-09-07-080557.png)
+```python
+java = 86
+python = 68
+
+if java > 80:
+    if python > 80:
+        print('优秀')
+    else:
+        print('不优秀')
+else:
+    print('不优秀')
+```
+
+输出结果：
+
+```
+不优秀
+```
 
 当然这只是为了说明 if 条件语句是可以嵌套的。如果是这个需求，我个人还是不太建议这样使用 if 嵌套的，因为这样代码量多了，而且嵌套太多，也不方便阅读代码。
 
