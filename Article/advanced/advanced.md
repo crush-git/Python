@@ -1,2 +1,2 @@
-* [使用Python虚拟环境](/Article/advanced/使用Python虚拟环境.md)
-* [Mac中使用virtualenv和virtualenvwrapper](/Article/advanced/Mac中使用virtualenv和virtualenvwrapper.md)
+* [使用 Python 虚拟环境](使用Python虚拟环境.md)
+* [Mac 中使用 virtualenv 和 virtualenvwrapper](Mac中使用virtualenv和virtualenvwrapper.md)

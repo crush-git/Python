@@ -60,6 +60,7 @@ nav:
   - 首页: index.md
   - 为什么学 Python: PythonBasis/python0/WhyStudyPython.md
   - 代码规范:
+      - 序: codeSpecification/codeSpecification_Preface.md
       - 简明概述: codeSpecification/codeSpecification_first.md
       - 注释: codeSpecification/codeSpecification_second.md
       - 命名规范: codeSpecification/codeSpecification_third.md
@@ -131,6 +132,7 @@ nav:
       - 自定义容器: PythonBasis/python10/5.md
       - 运算符魔术方法: PythonBasis/python10/6.md
   - 枚举类:
+      - 序: PythonBasis/python11/Preface.md
       - 使用: PythonBasis/python11/1.md
       - Enum 源码: PythonBasis/python11/2.md
       - 自定义类型: PythonBasis/python11/3.md
