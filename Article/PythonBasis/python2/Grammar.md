@@ -25,5 +25,5 @@ yes
 
 要注意的是 Python 程序是大小写敏感的，如果写错了大小写，程序会报错。
 
-更多的说明可以看看之前的文章：[Python代码规范中的简明概述](https://www.readwithu.com/codeSpecification/codeSpecification_first.html)
+更多的说明可以看看之前的文章：[Python 代码规范中的简明概述](../../codeSpecification/codeSpecification_first.md)
 
