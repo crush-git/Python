@@ -88,7 +88,7 @@ for iterating_var in sequence:
 
 
 ```python
-for letter in 'Hello 水哥':
+for letter in 'Hello 两点水':
     print(letter)
 ```
 
@@ -111,7 +111,7 @@ o
 那如果我们把字符串换为字典 dict 呢？
 
 ```python
-dict = {'一点水': '小学生', '水哥': '初中生', '三点水': '高中生'}
+dict = {'一点水': '小学生', '两点水': '初中生', '三点水': '高中生'}
 
 for i in dict:
     print(i)
@@ -121,7 +121,7 @@ for i in dict:
 
 ```
 一点水
-水哥
+两点水
 三点水
 ```
 

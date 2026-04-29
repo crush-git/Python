@@ -22,8 +22,8 @@ tuple 和 List 非常类似，但是 tuple 一旦初始化就不能修改。
 元组创建很简单，只需要在括号中添加元素，并使用逗号隔开即可。
 
 ```python
-tuple1=('水哥','twowter','liangdianshui',123,456)
-tuple2='水哥','twowter','liangdianshui',123,456
+tuple1=('两点水','twowter','liangdianshui',123,456)
+tuple2='两点水','twowter','liangdianshui',123,456
 ```
 
 创建空元组
@@ -51,8 +51,8 @@ tuple4=(123,)
 
 ```python
 #-*-coding:utf-8-*-
-tuple1 = ('水哥', 'twowter', 'liangdianshui', 123, 456)
-tuple2 = '水哥', 'twowter', 'liangdianshui', 123, 456
+tuple1 = ('两点水', 'twowter', 'liangdianshui', 123, 456)
+tuple2 = '两点水', 'twowter', 'liangdianshui', 123, 456
 tuple3 = ()
 tuple4 = (123,)
 tuple5 = (123)
@@ -66,8 +66,8 @@ print(tuple5)
 输出的结果：
 
 ```
-('水哥', 'twowter', 'liangdianshui', 123, 456)
-('水哥', 'twowter', 'liangdianshui', 123, 456)
+('两点水', 'twowter', 'liangdianshui', 123, 456)
+('两点水', 'twowter', 'liangdianshui', 123, 456)
 ()
 (123,)
 123
@@ -86,8 +86,8 @@ print(tuple5)
 ```python
 #-*-coding:utf-8-*-
 
-tuple1=('水哥','twowter','liangdianshui',123,456)
-tuple2='水哥','twowter','liangdianshui',123,456
+tuple1=('两点水','twowter','liangdianshui',123,456)
+tuple2='两点水','twowter','liangdianshui',123,456
 
 print(tuple1[1])
 print(tuple2[0])
@@ -97,7 +97,7 @@ print(tuple2[0])
 
 ```
 twowter
-水哥
+两点水
 ```
 
 
@@ -117,7 +117,7 @@ twowter
 ```python
 #-*-coding:utf-8-*-
 list1=[123,456]
-tuple1=('水哥','twowater','liangdianshui',list1)
+tuple1=('两点水','twowater','liangdianshui',list1)
 print(tuple1)
 list1[0]=789
 list1[1]=100
@@ -126,8 +126,8 @@ print(tuple1)
 
 输出的结果：
 ```
-('水哥', 'twowater', 'liangdianshui', [123, 456])
-('水哥', 'twowater', 'liangdianshui', [789, 100])
+('两点水', 'twowater', 'liangdianshui', [123, 456])
+('两点水', 'twowater', 'liangdianshui', [789, 100])
 ```
 
 
@@ -152,7 +152,7 @@ tuple 元组中的元素值是不允许删除的，但我们可以使用 del 语
 ```python
 #-*-coding:utf-8-*-
 
-tuple1=('水哥','twowter','liangdianshui',[123,456])
+tuple1=('两点水','twowter','liangdianshui',[123,456])
 print(tuple1)
 del tuple1
 ```
@@ -184,7 +184,7 @@ del tuple1
 最后跟列表一样，来一个实例，大家也可以多尝试，去把元组的各种玩法玩一遍。
 
 ```python
-name1 = ('一点水', '水哥', '三点水', '四点水', '五点水')
+name1 = ('一点水', '两点水', '三点水', '四点水', '五点水')
 
 name2 = ('1点水', '2点水', '3点水', '4点水', '5点水')
 
@@ -210,8 +210,8 @@ print(tuple(list1))
 
 ```
 5
-('一点水', '水哥', '三点水', '四点水', '五点水', '1点水', '2点水', '3点水', '4点水', '5点水')
-('一点水', '水哥', '三点水', '四点水', '五点水', '一点水', '水哥', '三点水', '四点水', '五点水')
+('一点水', '两点水', '三点水', '四点水', '五点水', '1点水', '2点水', '3点水', '4点水', '5点水')
+('一点水', '两点水', '三点水', '四点水', '五点水', '一点水', '两点水', '三点水', '四点水', '五点水')
 True
 5点水
 1点水
