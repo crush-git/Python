@@ -6,6 +6,8 @@
 
 # 目录 #
 
+![本章思维导图](mindmap.png)
+
 - [一、简明概述](codeSpecification_first.md)
     - 1、编码
     - 2、代码格式

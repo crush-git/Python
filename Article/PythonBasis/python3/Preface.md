@@ -2,10 +2,10 @@
 
 之前我们学习了字符串，整数，浮点数几种基本数据类型，现在我们接着学习两种新的数据类型，列表（List）和元组（tuple）。
 
-注： [https://www.readwithu.com/](https://www.readwithu.com/) 同步更新。
-
 
 # 目录 #
+
+![本章思维导图](mindmap.png)
 
 - 一、List（列表）
     1. 什么是 List（列表）
