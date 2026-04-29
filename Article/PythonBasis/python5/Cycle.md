@@ -88,7 +88,7 @@ for iterating_var in sequence:
 
 
 ```python
-for letter in 'Hello 两点水':
+for letter in 'Hello 水哥':
     print(letter)
 ```
 
@@ -106,12 +106,12 @@ o
 水
 ```
 
-从打印结果来看，它就是把字符串 `Hello 两点水`  一个一个字符的打印出来。
+从打印结果来看，它就是把字符串 `Hello 水哥`  一个一个字符的打印出来。
 
 那如果我们把字符串换为字典 dict 呢？
 
 ```python
-dict = {'一点水': '小学生', '两点水': '初中生', '三点水': '高中生'}
+dict = {'一点水': '小学生', '水哥': '初中生', '三点水': '高中生'}
 
 for i in dict:
     print(i)
@@ -121,7 +121,7 @@ for i in dict:
 
 ```
 一点水
-两点水
+水哥
 三点水
 ```
 
